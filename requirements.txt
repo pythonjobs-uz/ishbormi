@@ -1,0 +1,11 @@
+Django==5.0.1
+psycopg2-binary==2.9.9
+django-unfold==0.18.0
+django-filter==23.5
+django-modeltrans==0.3.3
+django-htmx==1.17.2
+django-compressor==4.4
+Pillow==10.2.0
+redis==5.0.1
+requests==2.31.0
+gunicorn==21.2.0

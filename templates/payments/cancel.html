@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Payment Cancelled" %} - Ishbormi{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto text-center">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <div class="mb-6">
+            <svg class="mx-auto h-16 w-16 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">{% trans "Payment Cancelled" %}</h1>
+        <p class="text-gray-600 mb-8">
+            {% trans "Your payment was cancelled. You can try again anytime to enhance your job listing." %}
+        </p>
+        
+        <div class="space-y-4">
+            <a href="{% url 'enhance_job' payment.job.pk %}" class="block bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                {% trans "Try Again" %}
+            </a>
+            <a href="{% url 'job_detail' payment.job.pk %}" class="block text-gray-600 hover:text-gray-800">
+                {% trans "Back to Job" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

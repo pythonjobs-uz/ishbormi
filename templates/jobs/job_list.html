@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Jobs" %} - Ishbormi{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+    <!-- Hero Section -->
+    <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+            {% trans "Find Your Dream Job" %}
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            {% trans "Discover thousands of job opportunities in Uzbekistan" %}
+        </p>
+    </div>
+
+    <!-- Filters -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <form method="get" hx-get="{% url 'job_list' %}" hx-target="#job-results" hx-trigger="change, keyup delay:500ms">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {% trans "Search" %}
+                    </label>
+                    {{ filter.form.title }}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {% trans "Job Type" %}
+                    </label>
+                    {{ filter.form.job_type }}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {% trans "Location" %}
+                    </label>
+                    {{ filter.form.location_type }}
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Results -->
+    <div id="job-results">
+        {% include 'jobs/partials/job_list.html' %}
+    </div>
+</div>
+{% endblock %}

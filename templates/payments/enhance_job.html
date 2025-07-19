@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Enhance Job" %} - Ishbormi{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">{% trans "Enhance Your Job Listing" %}</h1>
+        
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">{{ job.title }}</h2>
+            <p class="text-gray-600">{{ job.company_name }}</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6 mb-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{% trans "Enhancement Benefits" %}</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    {% trans "Premium gradient background" %}
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    {% trans "Top placement for 30 days" %}
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    {% trans "Featured badge" %}
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    {% trans "Increased visibility and applications" %}
+                </li>
+            </ul>
+        </div>
+        
+        <div class="text-center mb-8">
+            <div class="text-4xl font-bold text-gray-900 mb-2">22,000 UZS</div>
+            <p class="text-gray-600">{% trans "One-time payment for 30 days enhancement" %}</p>
+        </div>
+        
+        <form method="post" class="text-center">
+            {% csrf_token %}
+            <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all">
+                {% trans "Proceed to Payment" %}
+            </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <a href="{% url 'job_detail' job.pk %}" class="text-gray-600 hover:text-gray-800">
+                {% trans "Cancel" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

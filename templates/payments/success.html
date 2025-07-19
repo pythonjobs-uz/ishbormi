@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Payment Successful" %} - Ishbormi{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto text-center">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <div class="mb-6">
+            <svg class="mx-auto h-16 w-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">{% trans "Payment Successful!" %}</h1>
+        <p class="text-gray-600 mb-8">
+            {% trans "Your job listing has been enhanced and will appear at the top of search results for the next 30 days." %}
+        </p>
+        
+        <div class="space-y-4">
+            <a href="{% url 'job_detail' payment.job.pk %}" class="block bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                {% trans "View Enhanced Job" %}
+            </a>
+            <a href="{% url 'job_list' %}" class="block text-gray-600 hover:text-gray-800">
+                {% trans "Back to Job Listings" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

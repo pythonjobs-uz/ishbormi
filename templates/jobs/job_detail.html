@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load i18n humanize %}
+
+{% block title %}{{ job.title }} at {{ job.company_name }} - Ishbormi{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-8">
+    <!-- Back Button -->
+    <div>
+        <a href="{% url 'job_list' %}" class="inline-flex items-center text-primary-600 hover:text-primary-700">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            {% trans "Back to Jobs" %}
+        </a>
+    </div>
+
+    <!-- Job Header -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 {% if job.is_enhanced %}enhanced-job{% endif %}">
+        <div class="flex items-start justify-between mb-6">
+            <div class="flex items-start space-x-6">
+                <!-- Company Logo -->
+                <div class="flex-shrink-0">
+                    {% if job.company_logo %}
+                        <img src="{{ job.company_logo.url }}" alt="{{ job.company_name }}" class="w-16 h-16 rounded-lg object-cover">
+                    {% else %}
+                        <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-500 font-semibold text-xl">
+                                {{ job.company_name|first|upper }}
+                            </span>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Job Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-2">
+                        <h1 class="text-3xl font-bold {% if job.is_enhanced %}text-white{% else %}text-gray-900{% endif %}">
+                            {{ job.title }}
+                        </h1>
+                        {% if job.is_enhanced %}
+                            <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-medium">
+                                {% trans "Featured" %}
+                            </span>
+                        {% endif %}
+                    </div>
+                    
+                    <p class="text-xl {% if job.is_enhanced %}text-white{% else %}text-gray-700{% endif %} font-medium mb-4">
+                        {{ job.company_name }}
+                    </p>
+                    
+                    <div class="flex flex-wrap items-center gap-6 text-sm {% if job.is_enhanced %}text-white{% else %}text-gray-600{% endif %}">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                            {{ job.get_job_type_display }}
+                        </span>
+                        
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            {{ job.get_location_type_display }}
+                        </span>
+                        
+                        {% if job.salary %}
+                            <span class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                                </svg>
+                                {{ job.salary }}
+                            </span>
+                        {% endif %}
+                        
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                            </svg>
+                            {% trans "Posted" %} {{ job.posted_date|naturaltime }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhancement Button -->
+            {% if not job.is_enhanced %}
+                <div class="flex-shrink-0">
+                    <a href="{% url 'enhance_job' job.pk %}" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all">
+                        {% trans "Enhance Job" %} (22,000 UZS)
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Job Description -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">{% trans "Job Description" %}</h2>
+        <div class="prose max-w-none text-gray-700">
+            {{ job.description|linebreaks }}
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+            {% trans "Comments" %} ({{ comments.count }})
+        </h2>
+        
+        <!-- Comment Form -->
+        <div class="mb-8">
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                <div>
+                    <label for="{{ comment_form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                        {% trans "Your Name" %}
+                    </label>
+                    {{ comment_form.name }}
+                </div>
+                <div>
+                    <label for="{{ comment_form.text.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                        {% trans "Comment" %}
+                    </label>
+                    {{ comment_form.text }}
+                </div>
+                <button type="submit" class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                    {% trans "Post Comment" %}
+                </button>
+            </form>
+        </div>
+        
+        <!-- Comments List -->
+        <div class="space-y-6">
+            {% for comment in comments %}
+                <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-medium text-gray-900">{{ comment.name }}</h4>
+                        <span class="text-sm text-gray-500">{{ comment.posted_date|naturaltime }}</span>
+                    </div>
+                    <p class="text-gray-700">{{ comment.text|linebreaks }}</p>
+                </div>
+            {% empty %}
+                <p class="text-gray-500 text-center py-8">
+                    {% trans "No comments yet. Be the first to comment!" %}
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
