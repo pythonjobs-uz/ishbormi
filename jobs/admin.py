@@ -1,12 +1,13 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
+from parler.admin import TranslatableAdmin
 from .models import Job
 
 @admin.register(Job)
-class JobAdmin(ModelAdmin):
+class JobAdmin(TranslatableAdmin, ModelAdmin):
     list_display = ['title', 'company_name', 'job_type', 'location_type', 'is_enhanced', 'posted_date', 'expiry_date', 'is_active']
     list_filter = ['job_type', 'location_type', 'is_enhanced', 'is_active', 'posted_date']
-    search_fields = ['title', 'company_name', 'description']
+    search_fields = ['translations__title', 'company_name', 'translations__description']
     list_editable = ['is_enhanced', 'is_active']
     readonly_fields = ['posted_date']
     
@@ -24,3 +25,6 @@ class JobAdmin(ModelAdmin):
             'fields': ('created_by',)
         }),
     )
+    
+    def get_prepopulated_fields(self, request, obj=None):
+        return {}

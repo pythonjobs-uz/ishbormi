@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     
     # Third party apps
     'django_filters',
-    'modeltrans',
+    'parler',
     'django_htmx',
     'compressor',
     
@@ -175,3 +175,17 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
+
+# Parler (Translation) settings
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'uz'},
+        {'code': 'ru'},
+    ),
+    'default': {
+        'fallbacks': ['uz'],
+        'hide_untranslated': False,
+    }
+}
+
+PARLER_DEFAULT_LANGUAGE_CODE = 'uz'

@@ -1,7 +1,8 @@
 from django import forms
+from parler.forms import TranslatableModelForm
 from .models import Job
 
-class JobForm(forms.ModelForm):
+class JobForm(TranslatableModelForm):
     class Meta:
         model = Job
         fields = ['title', 'company_name', 'company_logo', 'job_type', 'location_type', 'salary', 'description']
