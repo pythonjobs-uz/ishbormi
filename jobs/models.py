@@ -54,4 +54,5 @@ class Job(TranslatableModel):
         return reverse('job_detail', kwargs={'pk': self.pk})
     
     def __str__(self):
-        return f"{self.safe_translation_getter('title', any_language=True)} at {self.company_name}"
+        title = self.safe_translation_getter('title', any_language=True)
+        return f"{title or 'Untitled Job'} at {self.company_name}"

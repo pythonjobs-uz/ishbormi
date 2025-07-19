@@ -60,6 +60,7 @@ def job_create(request):
             if request.user.is_authenticated:
                 job.created_by = request.user
             job.save()
+            form.save_m2m()  # Save translations
             messages.success(request, 'Your job has been posted successfully!')
             return redirect('job_detail', pk=job.pk)
     else:

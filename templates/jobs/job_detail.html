@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n humanize %}
 
-{% block title %}{{ job.title }} at {{ job.company_name }} - Ishbormi{% endblock %}
+{% block title %}{{ job.title|default:"Untitled Job" }} at {{ job.company_name }} - Ishbormi{% endblock %}
 
 {% block content %}
 <div class="max-w-4xl mx-auto space-y-8">
@@ -36,7 +36,7 @@
                 <div>
                     <div class="flex items-center space-x-3 mb-2">
                         <h1 class="text-3xl font-bold {% if job.is_enhanced %}text-white{% else %}text-gray-900{% endif %}">
-                            {{ job.title }}
+                            {{ job.title|default:"Untitled Job" }}
                         </h1>
                         {% if job.is_enhanced %}
                             <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-medium">
@@ -99,7 +99,7 @@
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
         <h2 class="text-2xl font-semibold text-gray-900 mb-6">{% trans "Job Description" %}</h2>
         <div class="prose max-w-none text-gray-700">
-            {{ job.description|linebreaks }}
+            {{ job.description|linebreaks|default:"No description available." }}
         </div>
     </div>
 

@@ -19,4 +19,5 @@ class Payment(models.Model):
         ordering = ['-created_at']
     
     def __str__(self):
-        return f"Payment for {self.job.title} - {self.status}"
+        job_title = self.job.safe_translation_getter('title', any_language=True) or 'Untitled Job'
+        return f"Payment for {job_title} - {self.status}"

@@ -60,11 +60,11 @@ def payment_cancel(request, payment_id):
 def payment_callback(request):
     # Handle Mirpay.uz callback
     if request.method == 'POST':
-        data = json.loads(request.body)
-        transaction_id = data.get('transaction_id')
-        status = data.get('status')
-        
         try:
+            data = json.loads(request.body)
+            transaction_id = data.get('transaction_id')
+            status = data.get('status')
+            
             payment = Payment.objects.get(transaction_id=transaction_id)
             payment.status = 'completed' if status == 'success' else 'failed'
             payment.save()
@@ -75,7 +75,7 @@ def payment_callback(request):
                 job.save()
             
             return JsonResponse({'status': 'ok'})
-        except Payment.DoesNotExist:
-            return JsonResponse({'status': 'error', 'message': 'Payment not found'})
+        except (Payment.DoesNotExist, json.JSONDecodeError, KeyError):
+            return JsonResponse({'status': 'error', 'message': 'Invalid request'})
     
-    return JsonResponse({'status': 'error', 'message': 'Invalid request'})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

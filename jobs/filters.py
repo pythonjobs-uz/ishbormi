@@ -4,6 +4,7 @@ from .models import Job
 
 class JobFilter(django_filters.FilterSet):
     title = django_filters.CharFilter(
+        field_name='translations__title',
         lookup_expr='icontains',
         widget=forms.TextInput(attrs={
             'placeholder': 'Search jobs...',

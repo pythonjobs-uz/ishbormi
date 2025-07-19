@@ -5,10 +5,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-your-secret-key-here'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production-12345')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
@@ -146,25 +146,25 @@ UNFOLD = {
 }
 
 # Mirpay.uz settings
-MIRPAY_STORE_NAME = "TestBor"
-MIRPAY_KASSA_ID = "1413"
-MIRPAY_API_KEY = "13ee7a1299bc5ced2e749899658a69c8"
-MIRPAY_BASE_URL = "https://api.mirpay.uz"
+MIRPAY_STORE_NAME = os.environ.get('MIRPAY_STORE_NAME', 'TestBor')
+MIRPAY_KASSA_ID = os.environ.get('MIRPAY_KASSA_ID', '1413')
+MIRPAY_API_KEY = os.environ.get('MIRPAY_API_KEY', '13ee7a1299bc5ced2e749899658a69c8')
+MIRPAY_BASE_URL = os.environ.get('MIRPAY_BASE_URL', 'https://api.mirpay.uz')
 
 # Job settings
-JOB_EXPIRY_DAYS = 30
-ENHANCED_JOB_PRICE = 22000.00
+JOB_EXPIRY_DAYS = int(os.environ.get('JOB_EXPIRY_DAYS', '30'))
+ENHANCED_JOB_PRICE = float(os.environ.get('ENHANCED_JOB_PRICE', '22000.00'))
 
 # Cache settings
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
     }
 }
 
 # Compressor settings
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = not DEBUG
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.rCSSMinFilter',

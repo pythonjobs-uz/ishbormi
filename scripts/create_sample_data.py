@@ -145,7 +145,6 @@ This is a project-based freelance position.''',
     jobs_created = 0
     for job_data in sample_jobs:
         job, created = Job.objects.get_or_create(
-            title=job_data['title'],
             company_name=job_data['company_name'],
             defaults={
                 **job_data,

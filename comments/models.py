@@ -12,4 +12,5 @@ class Comment(models.Model):
         ordering = ['-posted_date']
     
     def __str__(self):
-        return f"Comment by {self.name} on {self.job.title}"
+        job_title = self.job.safe_translation_getter('title', any_language=True) or 'Untitled Job'
+        return f"Comment by {self.name} on {job_title}"
