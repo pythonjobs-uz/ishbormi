@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.http import JsonResponse
 from .models import Job
 from .filters import JobFilter
+from .forms import JobForm
 from comments.models import Comment
 from comments.forms import CommentForm
 
@@ -52,7 +53,16 @@ def job_detail(request, pk):
 
 def job_create(request):
     if request.method == 'POST':
-        # Handle job creation
-        pass
+        form = JobForm(request.POST, request.FILES)
+        if form.is_valid():
+            job = form.save(commit=False)
+            # Set created_by if user is authenticated, otherwise leave it None
+            if request.user.is_authenticated:
+                job.created_by = request.user
+            job.save()
+            messages.success(request, 'Your job has been posted successfully!')
+            return redirect('job_detail', pk=job.pk)
+    else:
+        form = JobForm()
     
-    return render(request, 'jobs/job_create.html')
+    return render(request, 'jobs/job_create.html', {'form': form})

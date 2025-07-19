@@ -3,8 +3,7 @@ import sys
 import django
 from datetime import datetime, timedelta
 
-# Add the project directory to the Python path
-sys.path.append('/app')
+# Setup Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ishbormi.settings')
 django.setup()
 
@@ -13,6 +12,8 @@ from jobs.models import Job
 from comments.models import Comment
 
 def create_sample_data():
+    print("Creating sample data for Ishbormi job board...")
+    
     # Create a sample user
     user, created = User.objects.get_or_create(
         username='admin',
@@ -25,7 +26,9 @@ def create_sample_data():
     if created:
         user.set_password('admin123')
         user.save()
-        print("Created admin user: admin/admin123")
+        print("✓ Created admin user: admin/admin123")
+    else:
+        print("✓ Admin user already exists")
 
     # Sample job data
     sample_jobs = [
@@ -139,6 +142,7 @@ This is a project-based freelance position.''',
     ]
 
     # Create sample jobs
+    jobs_created = 0
     for job_data in sample_jobs:
         job, created = Job.objects.get_or_create(
             title=job_data['title'],
@@ -150,7 +154,8 @@ This is a project-based freelance position.''',
             }
         )
         if created:
-            print(f"Created job: {job.title}")
+            jobs_created += 1
+            print(f"✓ Created job: {job.title}")
 
             # Add sample comments
             sample_comments = [
@@ -171,8 +176,13 @@ This is a project-based freelance position.''',
                     job=job,
                     **comment_data
                 )
+        else:
+            print(f"✓ Job already exists: {job.title}")
 
-    print("Sample data created successfully!")
+    print(f"\n🎉 Sample data creation completed!")
+    print(f"📊 Created {jobs_created} new jobs")
+    print(f"👤 Admin credentials: admin / admin123")
+    print(f"🌐 Access admin at: http://localhost:8000/admin/")
 
 if __name__ == '__main__':
     create_sample_data()

@@ -129,10 +129,6 @@ UNFOLD = {
     "SITE_TITLE": "Ishbormi Admin",
     "SITE_HEADER": "Ishbormi Job Board",
     "SITE_URL": "/",
-    "SITE_ICON": {
-        "light": lambda request: static("icon-light.svg"),
-        "dark": lambda request: static("icon-dark.svg"),
-    },
     "COLORS": {
         "primary": {
             "50": "250 245 255",

@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}">
 <head>
@@ -73,16 +74,16 @@
                 <!-- Navigation -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="{% url 'job_list' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                        Jobs
+                        {% trans "Jobs" %}
                     </a>
                     <a href="{% url 'job_create' %}" class="bg-primary-600 text-white hover:bg-primary-700 px-4 py-2 rounded-md text-sm font-medium">
-                        Post a Job
+                        {% trans "Post a Job" %}
                     </a>
                 </nav>
                 
                 <!-- Language Switcher -->
                 <div class="flex items-center space-x-4">
-                    <form action="{% url 'set_language' %}" method="post" class="inline">
+                    <form action="/i18n/setlang/" method="post" class="inline">
                         {% csrf_token %}
                         <input name="next" type="hidden" value="{{ request.get_full_path }}" />
                         <select name="language" onchange="this.form.submit()" class="border border-gray-300 rounded-md px-3 py-1 text-sm">

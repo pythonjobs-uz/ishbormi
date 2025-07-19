@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Jobs"
+msgstr "Вакансии"
+
+msgid "Post a Job"
+msgstr "Разместить вакансию"
+
+msgid "Find Your Dream Job"
+msgstr "Найдите работу своей мечты"
+
+msgid "Discover thousands of job opportunities in Uzbekistan"
+msgstr "Откройте для себя тысячи возможностей трудоустройства в Узбекистане"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Job Type"
+msgstr "Тип работы"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Featured"
+msgstr "Рекомендуемые"
+
+msgid "View Details"
+msgstr "Подробнее"
+
+msgid "No jobs found"
+msgstr "Вакансии не найдены"
+
+msgid "Try adjusting your search filters"
+msgstr "Попробуйте изменить фильтры поиска"
+
+msgid "Previous"
+msgstr "Предыдущая"
+
+msgid "Next"
+msgstr "Следующая"
+
+msgid "Back to Jobs"
+msgstr "Вернуться к вакансиям"
+
+msgid "Job Description"
+msgstr "Описание вакансии"
+
+msgid "Comments"
+msgstr "Комментарии"
+
+msgid "Your Name"
+msgstr "Ваше имя"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Post Comment"
+msgstr "Оставить комментарий"
+
+msgid "No comments yet. Be the first to comment!"
+msgstr "Пока нет комментариев. Будьте первым!"
+
+msgid "Posted"
+msgstr "Опубликовано"
+
+msgid "Full Time"
+msgstr "Полная занятость"
+
+msgid "Part Time"
+msgstr "Частичная занятость"
+
+msgid "Freelance"
+msgstr "Фриланс"
+
+msgid "Remote"
+msgstr "Удаленно"
+
+msgid "Online"
+msgstr "Онлайн"
+
+msgid "Offline"
+msgstr "Офлайн"
+
+msgid "Post a New Job"
+msgstr "Разместить новую вакансию"
+
+msgid "Job Title"
+msgstr "Название вакансии"
+
+msgid "Company Name"
+msgstr "Название компании"
+
+msgid "Company Logo"
+msgstr "Логотип компании"
+
+msgid "Select job type"
+msgstr "Выберите тип работы"
+
+msgid "Select location type"
+msgstr "Выберите тип местоположения"
+
+msgid "Salary"
+msgstr "Зарплата"
+
+msgid "optional"
+msgstr "необязательно"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Enhance Job"
+msgstr "Улучшить вакансию"
+
+msgid "Enhance Your Job Listing"
+msgstr "Улучшите свою вакансию"
+
+msgid "Enhancement Benefits"
+msgstr "Преимущества улучшения"
+
+msgid "Premium gradient background"
+msgstr "Премиум градиентный фон"
+
+msgid "Top placement for 30 days"
+msgstr "Размещение в топе на 30 дней"
+
+msgid "Featured badge"
+msgstr "Значок рекомендуемой"
+
+msgid "Increased visibility and applications"
+msgstr "Увеличенная видимость и отклики"
+
+msgid "One-time payment for 30 days enhancement"
+msgstr "Единоразовый платеж за 30-дневное улучшение"
+
+msgid "Proceed to Payment"
+msgstr "Перейти к оплате"
+
+msgid "Payment Successful!"
+msgstr "Оплата прошла успешно!"
+
+msgid "Your job listing has been enhanced and will appear at the top of search results for the next 30 days."
+msgstr "Ваша вакансия была улучшена и будет отображаться в топе результатов поиска в течение следующих 30 дней."
+
+msgid "View Enhanced Job"
+msgstr "Посмотреть улучшенную вакансию"
+
+msgid "Back to Job Listings"
+msgstr "Вернуться к списку вакансий"
+
+msgid "Payment Cancelled"
+msgstr "Оплата отменена"
+
+msgid "Your payment was cancelled. You can try again anytime to enhance your job listing."
+msgstr "Ваша оплата была отменена. Вы можете попробовать снова в любое время, чтобы улучшить свою вакансию."
+
+msgid "Try Again"
+msgstr "Попробовать снова"
+
+msgid "Back to Job"
+msgstr "Вернуться к вакансии"

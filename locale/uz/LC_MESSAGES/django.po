@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Jobs"
+msgstr "Ish o'rinlari"
+
+msgid "Post a Job"
+msgstr "Ish e'lon qilish"
+
+msgid "Find Your Dream Job"
+msgstr "Orzuingizdagi ishni toping"
+
+msgid "Discover thousands of job opportunities in Uzbekistan"
+msgstr "O'zbekistondagi minglab ish imkoniyatlarini kashf eting"
+
+msgid "Search"
+msgstr "Qidirish"
+
+msgid "Job Type"
+msgstr "Ish turi"
+
+msgid "Location"
+msgstr "Joylashuv"
+
+msgid "Featured"
+msgstr "Tanlangan"
+
+msgid "View Details"
+msgstr "Batafsil ko'rish"
+
+msgid "No jobs found"
+msgstr "Hech qanday ish topilmadi"
+
+msgid "Try adjusting your search filters"
+msgstr "Qidiruv filtrlarini o'zgartirib ko'ring"
+
+msgid "Previous"
+msgstr "Oldingi"
+
+msgid "Next"
+msgstr "Keyingi"
+
+msgid "Back to Jobs"
+msgstr "Ishlarga qaytish"
+
+msgid "Job Description"
+msgstr "Ish tavsifi"
+
+msgid "Comments"
+msgstr "Izohlar"
+
+msgid "Your Name"
+msgstr "Ismingiz"
+
+msgid "Comment"
+msgstr "Izoh"
+
+msgid "Post Comment"
+msgstr "Izoh qoldirish"
+
+msgid "No comments yet. Be the first to comment!"
+msgstr "Hali izohlar yo'q. Birinchi bo'lib izoh qoldiring!"
+
+msgid "Posted"
+msgstr "E'lon qilingan"
+
+msgid "Full Time"
+msgstr "To'liq vaqt"
+
+msgid "Part Time"
+msgstr "Yarim vaqt"
+
+msgid "Freelance"
+msgstr "Frilanser"
+
+msgid "Remote"
+msgstr "Masofaviy"
+
+msgid "Online"
+msgstr "Onlayn"
+
+msgid "Offline"
+msgstr "Oflayn"
+
+msgid "Post a New Job"
+msgstr "Yangi ish e'lon qilish"
+
+msgid "Job Title"
+msgstr "Ish nomi"
+
+msgid "Company Name"
+msgstr "Kompaniya nomi"
+
+msgid "Company Logo"
+msgstr "Kompaniya logotipi"
+
+msgid "Select job type"
+msgstr "Ish turini tanlang"
+
+msgid "Select location type"
+msgstr "Joylashuv turini tanlang"
+
+msgid "Salary"
+msgstr "Maosh"
+
+msgid "optional"
+msgstr "ixtiyoriy"
+
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+msgid "Enhance Job"
+msgstr "Ishni yaxshilash"
+
+msgid "Enhance Your Job Listing"
+msgstr "Ish e'loningizni yaxshilang"
+
+msgid "Enhancement Benefits"
+msgstr "Yaxshilash afzalliklari"
+
+msgid "Premium gradient background"
+msgstr "Premium gradient fon"
+
+msgid "Top placement for 30 days"
+msgstr "30 kun davomida yuqori joylashtirish"
+
+msgid "Featured badge"
+msgstr "Tanlangan nishoni"
+
+msgid "Increased visibility and applications"
+msgstr "Ko'rinish va arizalar soni oshishi"
+
+msgid "One-time payment for 30 days enhancement"
+msgstr "30 kunlik yaxshilash uchun bir martalik to'lov"
+
+msgid "Proceed to Payment"
+msgstr "To'lovga o'tish"
+
+msgid "Payment Successful!"
+msgstr "To'lov muvaffaqiyatli!"
+
+msgid "Your job listing has been enhanced and will appear at the top of search results for the next 30 days."
+msgstr "Sizning ish e'loningiz yaxshilandi va keyingi 30 kun davomida qidiruv natijalarining yuqori qismida ko'rinadi."
+
+msgid "View Enhanced Job"
+msgstr "Yaxshilangan ishni ko'rish"
+
+msgid "Back to Job Listings"
+msgstr "Ish e'lonlariga qaytish"
+
+msgid "Payment Cancelled"
+msgstr "To'lov bekor qilindi"
+
+msgid "Your payment was cancelled. You can try again anytime to enhance your job listing."
+msgstr "Sizning to'lovingiz bekor qilindi. Ish e'loningizni yaxshilash uchun istalgan vaqtda qayta urinib ko'rishingiz mumkin."
+
+msgid "Try Again"
+msgstr "Qayta urinish"
+
+msgid "Back to Job"
+msgstr "Ishga qaytish"
